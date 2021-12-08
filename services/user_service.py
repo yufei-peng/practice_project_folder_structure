@@ -17,9 +17,9 @@ class UserService:
 
 
     @classmethod
-    def update_user(cls, user: User):
+    def update_user(cls, user: User, user_id: int):
 
-        UserDao.update_user(user)
+        UserDao.update_user(user, user_id)
 
         return "OK"
 
@@ -33,7 +33,7 @@ class UserService:
 
 
     @classmethod
-    def get_user(cls, user_id: str):
+    def get_user(cls, user_id: int):
 
         user = UserDao.get_user(user_id)
 

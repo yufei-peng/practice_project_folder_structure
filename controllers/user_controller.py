@@ -18,22 +18,25 @@ class UserController:
         return "Add User Success"
 
     @classmethod
-    def update_user(cls, request: Request):
+    def update_user(cls, request: Request, user_id: int):
 
         user_string = request.data
+        # print(f"controller -> {user_string}")
         user = User.from_dict(json.loads(user_string))
-        UserService.update_user(user)
+        # print(f"controller --> {user.nickname}")
+        UserService.update_user(user, user_id)
         return "Update User Success"
 
     @classmethod
     def get_all_user(cls):
 
         users = UserService.get_all_user()
-        return users
+
+        return json.dumps(users)
 
     @classmethod
-    def get_user(cls, request:Request):
+    def get_user(cls, user_id: int):
 
-        user_id = request.args.get("user_id")
         user = UserService.get_user(user_id)
+        print(user)
         return user.to_dict()

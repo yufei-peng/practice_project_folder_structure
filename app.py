@@ -22,15 +22,15 @@ def get_all_user():
     return result
 
 
-@app.route('/v1/user/<string:user_id>', methods=['GET'])
+@app.route('/v1/user/<int:user_id>', methods=['GET'])
 def get_user(user_id):
     result = UserController.get_user(user_id)
     return result
 
 
-@app.route('/v1/user/<str:user_id>', methods=['PUT'])
-def update_user(request):
-    result = UserController.update_user(request)
+@app.route('/v1/user/<int:user_id>', methods=['PUT'])
+def update_user(user_id):
+    result = UserController.update_user(request, user_id)
     return result
 
 
