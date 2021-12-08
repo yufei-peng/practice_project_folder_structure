@@ -10,25 +10,25 @@ def hello_world():
     return "Hello, World!"
 
 
-@app.route('/v1/user', method=['POST'])
+@app.route('/v1/user', methods=['POST'])
 def add_user():
     result = UserController.add_user(request)
     return result
 
 
-@app.route('/v1/users', method=['GET'])
+@app.route('/v1/users', methods=['GET'])
 def get_all_user():
     result = UserController.get_all_user()
     return result
 
 
-@app.route('/v1/user/<str:user_id>', method=['GET'])
+@app.route('/v1/user/<string:user_id>', methods=['GET'])
 def get_user(user_id):
     result = UserController.get_user(user_id)
     return result
 
 
-@app.route('/v1/user/<str:user_id>', method=['PUT'])
+@app.route('/v1/user/<str:user_id>', methods=['PUT'])
 def update_user(request):
     result = UserController.update_user(request)
     return result
