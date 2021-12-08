@@ -56,6 +56,7 @@ class UserDao:
         return "OK"
 
 
+    # TODO 取得所有使用者，偷吃步直接使用 json 傳遞資料，要轉成物件傳遞
     @classmethod
     def get_all_user(cls):
         # 將檔案讀出來

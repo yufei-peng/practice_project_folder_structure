@@ -7,6 +7,7 @@ from __future__ import annotations
 class User(object):
 
     # User 的建構式
+    # TODO user_id 應該要自動產生 @@，目前是靠 request 的時候給值
     def __init__(self, user_id, last_name, first_name, nickname, birthday, gender, status, skill, is_delete=False):
         self.user_id = user_id
         self.last_name = last_name
